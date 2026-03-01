@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Members</title>
+
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+  background:linear-gradient(180deg,#000000,#1a0000,#000000);
+  color:white;
+}
+
+.wrapper{
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+.header{
+  position:absolute;
+  top:0;
+  width:100%;
+  background:linear-gradient(90deg,#990000,#ff0000);
+  padding:14px;
+  text-align:center;
+  font-weight:bold;
+  font-size:18px;
+  letter-spacing:1px;
+}
+
+.counter{
+  font-size:14px;
+  color:#ff4d4d;
+  margin-bottom:25px;
+  text-align:center;
+}
+
+.card{
+  width:90%;
+  max-width:420px;
+  background:rgba(20,20,20,0.95);
+  border-radius:18px;
+  padding:22px;
+  margin:12px 0;
+  box-shadow:0 0 25px rgba(255,0,0,0.6);
+  text-align:center;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.card:active{
+  transform:scale(0.96);
+}
+
+.title{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.sub{
+  font-size:14px;
+  color:#bbb;
+}
+
+.loading{
+  display:none;
+  margin-top:20px;
+  text-align:center;
+}
+
+.spinner{
+  border:4px solid #333;
+  border-top:4px solid red;
+  border-radius:50%;
+  width:45px;
+  height:45px;
+  margin:20px auto;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+.footer{
+  position:absolute;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+  font-size:11px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">🔞 MEMBERS ONLY</div>
+
+<div class="wrapper">
+
+<div class="counter">
+  現在 <span id="viewers">138</span> 人が閲覧中
+</div>
+
+<div class="card" onclick="go()">
+  <div class="title">❤️ JCTikTok動画</div>
+  <div class="sub">free movie</div>
+</div>
+
+<div class="card" onclick="go()">
+  <div class="title">🔥 TikTokシークレットライブ</div>
+  <div class="sub">リアルタイム配信中</div>
+</div>
+
+<div class="card" onclick="go()">
+  <div class="title">💋 中国JK・TikTok違法</div>
+  <div class="sub">あなたの地域で接続可能</div>
+</div>
+
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  接続中...
+</div>
+
+</div>
+
+<div class="footer">
+※18歳未満の利用は禁止されています。
+</div>
+
+<script>
+function go(){
+  document.getElementById("loading").style.display="block";
+  setTimeout(function(){
+    window.location.href="https://lite.tiktok.com/t/ZS9epWWvebfpV-6Dh0t/";
+  },2000);
+}
+
+setInterval(function(){
+  document.getElementById("viewers").innerText =
+    120 + Math.floor(Math.random()*25);
+},2000);
+</script>
+
+</body>
+</html>
