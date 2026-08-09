@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>おすすめ動画</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 0, 120, 0.25), transparent 32%),
+    radial-gradient(circle at top right, rgba(0, 190, 255, 0.22), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(180, 0, 255, 0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 170, 0, 0.12), transparent 30%),
+    linear-gradient(180deg, #07070c, #11111c);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background: rgba(10, 10, 18, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sub {
+  padding: 12px 14px 0;
+  font-size: 13px;
+  color: #d5d5d5;
+}
+
+.grid {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: rgba(20, 20, 30, 0.82);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.card:active {
+  transform: scale(0.96);
+}
+
+.thumb {
+  height: 125px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88),
+      rgba(255, 0, 100, 0.16),
+      rgba(0, 0, 0, 0.05)
+    );
+}
+
+.live {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background: #ff0050;
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.time {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.info {
+  padding: 9px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+
+.meta {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 10px;
+  padding: 4px 7px;
+  background: rgba(255, 0, 90, 0.16);
+  color: #ff8ab7;
+  border-radius: 999px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">おすすめ動画</div>
+<div class="sub">あなたへのおすすめ</div>
+
+<div class="grid">
+
+  <div class="card" onclick="go()">
+    <div class="thumb" style="background-image: url('https://picsum.photos/300/200?21')">
+      <div class="live">LIVE</div>
+      <div class="time">1:24</div>
+    </div>
+    <div class="info">
+      <div class="title">深夜の個人配信が流れてきた…</div>
+      <div class="meta">128万回再生</div>
+      <div class="tag">深夜配信</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="go()">
+    <div class="thumb" style="background-image: url('https://picsum.photos/300/200?22')">
+      <div class="live">HOT</div>
+      <div class="time">0:58</div>
+    </div>
+    <div class="info">
+      <div class="title">この配信、BAN前に保存したやつ</div>
+      <div class="meta">92万回再生</div>
+      <div class="tag">限定公開</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="go()">
+    <div class="thumb" style="background-image: url('https://picsum.photos/300/200?23')">
+      <div class="live">18+</div>
+      <div class="time">2:11</div>
+    </div>
+    <div class="info">
+      <div class="title">年齢制限かかってる動画</div>
+      <div class="meta">243万回再生</div>
+      <div class="tag">確認あり</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="go()">
+    <div class="thumb" style="background-image: url('https://picsum.photos/300/200?24')">
+      <div class="live">NEW</div>
+      <div class="time">1:03</div>
+    </div>
+    <div class="info">
+      <div class="title">最後まで見たら意味わかるやつ</div>
+      <div class="meta">77万回再生</div>
+      <div class="tag">おすすめ</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="go()">
+    <div class="thumb" style="background-image: url('https://picsum.photos/300/200?25')">
+      <div class="live">LIVE</div>
+      <div class="time">0:44</div>
+    </div>
+    <div class="info">
+      <div class="title">おすすめに出てきた怪しい配信</div>
+      <div class="meta">156万回再生</div>
+      <div class="tag">人気急上昇</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="go()">
+    <div class="thumb" style="background-image: url('https://picsum.photos/300/200?26')">
+      <div class="live">VIP</div>
+      <div class="time">1:37</div>
+    </div>
+    <div class="info">
+      <div class="title">続き気になって押したら…</div>
+      <div class="meta">301万回再生</div>
+      <div class="tag">限定</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function go() {
+  window.location.href =
+    "https://lite.tiktok.com/t/ZS9hAqrdpFxLx-FMtYv/";
+}
+</script>
+
+</body>
+</html>
